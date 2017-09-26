@@ -1,0 +1,3 @@
+Σας ενημερώνουμε πως το αίτημα σας έχει ολοκληρωθεί επιτυχώς. Η υποστήριξη SSL ενεργοποιείται μέσα από το Virtualmin στην επιλογη Edit Virtual Server και έπειτα στην καρτέλα Enabled features ενεργοποιούμε την επιλογή SSL website enabled?.
+
+Τέλος πατάμε Save Virtual Server.
