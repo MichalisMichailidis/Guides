@@ -1,0 +1,5 @@
+/home/allmedical/public_html/app/code/core/Mage/Core/Model
+
+Line:995
+
+αλλάζεις το $price, 2

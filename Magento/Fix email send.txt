@@ -1,0 +1,58 @@
+
+
+In latest Magento versions, all emails are being sent via CRON job. Every email will be queued and sending will depend on the set interval, in general 5 minutes.
+
+
+
+
+By default, Magento has already set CRON jobs at 
+System -> Configuration -> Advanced -> System -> Advanced -> Cron
+
+
+
+
+If CRON job is not working properly, please follow below steps to send instant emails.
+
+
+
+
+Copy Template.php file from 
+app -> code -> core -> Mage -> Core -> Model -> Email
+
+
+
+
+Create folder structure like 
+app -> code -> local ->  Mage -> Core -> Model -> Email
+
+
+
+
+Paste Template.php file in Email folder
+
+
+
+
+Open Template.php file and go to line number 407 or search for the following code 
+ if ($this->hasQueue() && $this->getQueue() instanceof Mage_Core_Model_Email_Queue) {
+
+
+
+
+Replace above code with following
+ if (!($this->hasQueue()) && $this->getQueue() instanceof Mage_Core_Model_Email_Queue) {
+
+
+
+
+This trick works perfectly on Magento ver. 1.9.2.0
+
+
+
+
+
+
+
+
+
+

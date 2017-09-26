@@ -1,0 +1,7 @@
+﻿
+To show a dropdown attribute add the code bellow
+<?php echo $_product->getAttributeText('diathithesimothta_mp') ?>
+
+If its text area add the code bellow
+
+ <p><?php echo $_product->getData('periexomeno_frodidas') ?></p>

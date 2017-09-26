@@ -1,0 +1,22 @@
+Here is the solution that i applied : In smartwave porto look for this file(ajax.phtml) in my case it located in here :
+
+\app\design\frontend\smartwave\porto\template\smartwave\ajaxcatalog\ajax.phtml
+Find this line in that file
+
+"url.replace(page_param," ");"
+somewhere around line 160 and 369. and change that with this in both locations. Your pagination thing will work :)
+
+"url.replace(page_param,page_param);"
+I'm attaching the block where you need to change this line.
+
+var hist = url;
+                        if(url.indexOf("p=") > -1){
+                            var len = url.length-url.indexOf("p=");
+                            var str_temp = url.substr(url.indexOf("p="),len);
+                            var page_param = "";
+                            if(str_temp.indexOf("&") == -1){
+                                page_param = str_temp;
+                            } else {
+                                page_param = str_temp.substr(0,str_temp.indexOf("&"));
+                            }
+                            hist = url.replace(page_param,""); /* Change here !! */

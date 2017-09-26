@@ -1,0 +1,10 @@
+<?php if (Mage::helper('customer')->isLoggedIn() ): ?>
+            <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log OUT'; ?></a>
+
+        <?php 
+    /*
+    else: ?>
+            <a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">SIGN IN</a>
+        <?php 
+    */
+    endif; ?>

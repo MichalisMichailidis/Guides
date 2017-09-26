@@ -1,0 +1,14 @@
+<div class="avail-sku">
+                                 
+                                  <?php $my_diathesimotita = $_product->getAttributeText('diathithesimothta_mp') ?>
+                                    <?php if ($_product->isAvailable()): ?>
+
+                                      <?php if (!($my_diathesimotita == "Εκτός Αποθέματος")) :?>
+                                         <div class="sk-avail"><img src="https://allmedical.gr/media/wysiwyg/photos/diathesimotita_icon.png" /> Διαθεσιμότητα: <?php echo $_product->getAttributeText('diathithesimothta_mp') ?></div>
+                                    <?php else : ?>
+                                        <div class="sk-avail"><img src="https://allmedical.gr/media/wysiwyg/photos/ektos-apothematos.png" /> Διαθεσιμότητα: <?php echo $_product->getAttributeText('diathithesimothta_mp') ?></div>
+                                      <?php endif; ?>
+                                 <?php else: ?>
+                                      <div class="sk-avail"><img src="https://allmedical.gr/media/wysiwyg/photos/ektos-apothematos.png" /> Διαθεσιμότητα: Εκτός Αποθέματος</div>
+                                 <?php endif; ?>
+                                     <div class="sku-place">Κωδικός Προϊόντος: <strong><?php echo $sku = Mage::getModel('catalog/product')->load($_product->getId())->getSku(); ?><strong></div>

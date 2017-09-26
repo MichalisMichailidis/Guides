@@ -1,0 +1,14 @@
+ <div class="prod-percent-disc-list">
+                    <?php 
+                        $originalPrice = $_product->getPrice();
+                        $finalPrice = $_product->getFinalPrice();
+                        $percentage = 0;
+                        if ($originalPrice > $finalPrice) {
+                            $percentage = ($originalPrice - $finalPrice) * 100 / $originalPrice;}
+                        if ($percentage) {
+                        
+                        echo "<span class='sale-span'>SALE</span><br />"; 
+                        
+                        echo  $this->__( "<span class='sale-span-numb'>-" . intval($percentage) . '%</span>');}?>
+
+                </div>

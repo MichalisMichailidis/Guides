@@ -1,0 +1,65 @@
+    <!-- invoice in line 161 /template/opc/onepage -->
+        <li class="fields">
+            <div class="wide-check field">
+                <input type="checkbox" class="checkbox reinput" name="ekdosh"> <label style="float:none; font-size:13px; margin-left:1px;" for="ekdosh">Έκδοση Τιμολογίου</label>
+            </div>
+            <div style="clear:both;" class="ifields">
+                <div class="field ">
+                    <label for="stoixeia">Στοιχεία Εταιρείας</label>
+                    <div class="input-box"><input class="input-text reinput" data-label="Στοιχεία Εταιρείας" name="stoixeia" type="text"></div>
+                </div>
+                <div class="field ">
+                    <label for="epaggelma">Επάγγελμα</label>
+                    <div class="input-box"><input class="input-text reinput" data-label="Επάγγελμα" name="epaggelma" type="text"></div>
+                </div>
+                <div class="field ">
+                    <label for="dieuthinsi">Διεύθυνση</label>
+                    <div class="input-box"><input class="input-text reinput" data-label="Διεύθυνση" name="dieuthinsi" type="text"></div>
+                </div>
+                <div class="field ">
+                    <label for="afm">ΑΦΜ</label>
+                    <div class="input-box"><input class="input-text reinput" data-label="ΑΦΜ" name="afm" type="text"></div>
+                </div>
+                <div class="field ">
+                    <label for="doy">ΔΟΥ</label>
+                    <div class="input-box"><input class="input-text reinput" data-label="ΔΟΥ" name="doy" type="text"></div>
+                </div>
+            </div>
+        </li>
+
+        <script type="text/javascript">
+            jQuery(document).ready(function($){
+
+                var delay = (function(){
+                  var timer = 0;
+                  return function(callback, ms){
+                  clearTimeout (timer);
+                  timer = setTimeout(callback, ms);
+                 };
+                })();
+
+                $(".ifields").slideUp();
+
+                $('input.input-text.reinput').keyup(function() {
+                  delay(function(){
+                    var sb = "Στοιχεία Έκδοσης Τιμολογίου:\n";
+                    $(".ifields input[type='text']").each(function(index){
+                        sb+=$(this).attr("data-label")+": "+$(this).val()+"\n";
+                    });
+
+                    $("#customer_comment").val(sb);
+                  }, 1000 );
+                });
+
+                $('input.checkbox.reinput').change(function() {
+                    if($(this).is(":checked")) {
+                        $(".ifields").slideDown();
+                    }
+                    else {
+                        console.log("reclicked");
+                        $(".ifields").slideUp();
+                    }
+                });
+            });
+        </script>
+        <!-- end invoice -->

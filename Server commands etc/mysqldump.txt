@@ -1,0 +1,5 @@
+mysqldump --databases (η βάση που θέλεις να κατεβάσεις) > dump.sql
+
+import
+
+mysql -u username -p database_name < file.sql

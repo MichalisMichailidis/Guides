@@ -1,0 +1,5 @@
+<?php echo $this->getChildHtml('name of static block'); ?>
+
+inside on static block
+
+{{block type="newsletter/subscribe" name="left.newsletter" template="newsletter/subscribe.phtml"}}
